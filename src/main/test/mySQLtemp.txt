@@ -1,0 +1,18 @@
+create table if not EXISTS TRANSACTIONS
+(
+ TRANSACTION_ID 	int not null,
+ USERNAME 			VARCHAR(36) not null,
+ ADDRESS			VARCHAR(36) not null,
+ DESCRIPTION		VARCHAR(256),
+ AMOUNT				float not null,
+ TRANSACTION_STATUS SMALLINT not null
+) ;
+
+alter table TRANSACTIONS
+ add constraint TRANSACTION_PK primary key (TRANSACTION_ID);
+
+INSERT INTO TRANSACTIONS (TRANSACTION_ID, USERNAME, ADDRESS, DESCRIPTION, AMOUNT, TRANSACTION_STATUS)
+values (1, 'dbicevan', 'dbuser1', 'eternal fleet unkeep', 55594.12, 0);
+
+INSERT INTO TRANSACTIONS (TRANSACTION_ID, USERNAME, ADDRESS, DESCRIPTION, AMOUNT, TRANSACTION_STATUS)
+values (2, 'dbuser1', 'dbicevan', null, 7.77, 0);
